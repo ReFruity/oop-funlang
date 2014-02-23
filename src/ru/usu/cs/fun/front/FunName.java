@@ -12,7 +12,7 @@ public class FunName extends AutomatonRecognizer {
 	protected String getCharClass(char ch){
 		boolean alpha = (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
 		boolean num = ch >= '0' && ch <= '9';
-		boolean symbols = "+-*/%=!&|_~".indexOf(ch) >= 0;
+		boolean symbols = "+-*/%=>!&|_~".indexOf(ch) >= 0;
 		return (alpha || symbols || num) ? "abc" : "*";
 	}
 }

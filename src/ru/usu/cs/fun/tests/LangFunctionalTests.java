@@ -1,5 +1,7 @@
 package ru.usu.cs.fun.tests;
 
+import org.junit.Test;
+
 import ru.usu.cs.fun.front.Lexer;
 import ru.usu.cs.fun.lang.FunLexer;
 import ru.usu.cs.fun.lang.FunParser;
@@ -10,22 +12,33 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class LangFunctionalTests {
+import static org.junit.Assert.assertEquals;
+
+public class LangFunctionalTests{
+    @Test
 	public void testChurchArithmetics() {
 		runTestsSet("church-arithmetics");
 	}
 
+    @Test
 	public void testChurchBooleans() {
 		runTestsSet("church-booleans");
 	}
 
+    @Test
 	public void testRecursion() {
 		runTestsSet("recursion");
 	}
 
+    @Test
 	public void testReductionOrder() {
 		runTestsSet("reduction-order");
 	}
+
+    @Test
+    public void testOperations() {
+        runTestsSet("operations");
+    }
 
 	private void runTestsSet(FunParser fun, FunScope scope, Lexer lexer, String expectedOutput) {
 		Object result;
@@ -35,7 +48,6 @@ public class LangFunctionalTests {
 			actualOutput = result.toString();
 		}
 		assertEquals(expectedOutput, actualOutput);
-
 	}
 
 	private void runTestsSet(String testssetName) {
@@ -44,7 +56,7 @@ public class LangFunctionalTests {
 			throw new RuntimeException(testssetName + " is missing");
 		BufferedReader r = new BufferedReader(new InputStreamReader(stream));
 		String content = "";
-		String line = null;
+		String line;
 		FunScope scope = new FunScope();
 		FunParser fun = new FunParser(scope);
 		try {
@@ -58,7 +70,7 @@ public class LangFunctionalTests {
 					}
 					content = "";
 				} else
-					content = content + line + '\n';
+					content += line + '\n';
 			}
 		} catch (IOException e) {
 			throw new RuntimeException(testssetName + " read error");

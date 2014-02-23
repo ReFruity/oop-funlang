@@ -1,10 +1,10 @@
 package ru.usu.cs.fun.lang;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import ru.usu.cs.fun.back.Scope;
 import ru.usu.cs.fun.back.Term;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class FunScope implements Scope {
 
@@ -33,6 +33,16 @@ public class FunScope implements Scope {
 			return new Eq();
 		if (name.equals("+"))
 			return new Add();
+        if (name.equals("-"))
+            return new Sub();
+        if (name.equals("*"))
+            return new Mul();
+        if (name.equals("/"))
+            return new Div();
+        if (name.equals("%"))
+            return new Mod();
+        if (name.equals(">"))
+            return new More();
 		if (name.equals("print"))
 			return new Print();
 		return items.get(name);

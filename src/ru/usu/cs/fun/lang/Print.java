@@ -16,7 +16,4 @@ public class Print extends Term {
 		System.out.println(arg.eval(scope).toString());
 		return Bool.TRUE;
 	}
-	
-	
-
 }

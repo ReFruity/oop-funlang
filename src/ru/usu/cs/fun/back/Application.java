@@ -30,10 +30,10 @@ public class Application extends Term {
 
 	@Override
 	public Term apply(Term arg, Scope scope) {
-		Term evaluted = eval(scope);
-		if (evaluted == this)
+		Term evaluated = eval(scope);
+		if (evaluated == this)
 			return null;
-		return evaluted.apply(arg, scope);
+		return evaluated.apply(arg, scope);
 	}
 
 	@Override
