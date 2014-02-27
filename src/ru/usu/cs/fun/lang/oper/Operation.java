@@ -1,4 +1,4 @@
-package ru.usu.cs.fun.lang;
+package ru.usu.cs.fun.lang.oper;
 
 import ru.usu.cs.fun.back.Scope;
 import ru.usu.cs.fun.back.Term;

@@ -121,6 +121,14 @@ public class FunParser extends AbstractLL1Parser {
 			}
 		});
 
+        // Term ::= Atom Tail // return Atom.apply(Tail);
+        add("Term", new String[] {"float", "name"}, new String[] { "Atom", "Tail" }, new ParseAction() {
+            public Terms execute(Object[] items) {
+                Term atom = (Term)items[0];
+                return new Terms(atom, (Terms) items[1]);
+            }
+        });
+
 		// Term ::= 'fun' '(' name ')' Term // return fun(name) body;
 		add("Term", new String[] { "fun", "(", "name", ")", "Term" }, new ParseAction() {
 			public Terms execute(Object[] items) {
@@ -159,6 +167,14 @@ public class FunParser extends AbstractLL1Parser {
 				return new Int((Integer)value);				
 			}
 		});
+
+        // Atom ::= float
+        add("Atom", new String[] { "float" }, new ParseAction() {
+            public Float execute(Object[] items) {
+                Object value = ((Lexeme)items[0]).getValue();
+                return new Float((java.lang.Float)value);
+            }
+        });
 
 		setInitial("Statement");
 	}

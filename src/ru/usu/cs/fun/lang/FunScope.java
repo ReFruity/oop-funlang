@@ -2,6 +2,7 @@ package ru.usu.cs.fun.lang;
 
 import ru.usu.cs.fun.back.Scope;
 import ru.usu.cs.fun.back.Term;
+import ru.usu.cs.fun.lang.oper.*;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,8 +1,9 @@
-package ru.usu.cs.fun.lang;
+package ru.usu.cs.fun.lang.oper;
 
 import ru.usu.cs.fun.back.Scope;
 import ru.usu.cs.fun.back.Term;
 import ru.usu.cs.fun.back.TermsSubstitutor;
+import ru.usu.cs.fun.lang.Int;
 
 public class Div extends Operation {
     @Override
