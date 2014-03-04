@@ -31,19 +31,19 @@ public class FunScope implements Scope {
 		if (result != null)
 			return result;
 		if (name.equals("="))
-			return new Eq();
+			return new Eq("=");
 		if (name.equals("+"))
-			return new Add();
+			return new Add("+");
         if (name.equals("-"))
-            return new Sub();
+            return new Sub("-");
         if (name.equals("*"))
-            return new Mul();
+            return new Mul("*");
         if (name.equals("/"))
-            return new Div();
+            return new Div("/");
         if (name.equals("%"))
-            return new Mod();
+            return new Mod("%");
         if (name.equals(">"))
-            return new More();
+            return new More(">");
 		if (name.equals("print"))
 			return new Print();
 		return items.get(name);

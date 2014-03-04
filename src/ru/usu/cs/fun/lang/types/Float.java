@@ -1,20 +1,14 @@
-package ru.usu.cs.fun.lang;
+package ru.usu.cs.fun.lang.types;
 
-import ru.usu.cs.fun.back.Term;
 import ru.usu.cs.fun.back.TermsSubstitutor;
 
-public class Float extends Term {
+public class Float extends DataType {
 
     public final float value;
 
     public Float(float value) {
         super();
         this.value = value;
-    }
-
-    @Override
-    public String toString(TermsSubstitutor subst) {
-        return value + "";
     }
 
     @Override
@@ -33,8 +27,12 @@ public class Float extends Term {
     }
 
     @Override
-    public Term substitute(String name, Term value) {
-        return this;
+    public String toString(TermsSubstitutor subst) {
+        return getValue() + "";
+    }
+    
+    public float getValue() {
+        return value;
     }
 
 }

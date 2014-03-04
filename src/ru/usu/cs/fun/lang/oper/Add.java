@@ -1,19 +1,20 @@
 package ru.usu.cs.fun.lang.oper;
 
-import ru.usu.cs.fun.back.Scope;
 import ru.usu.cs.fun.back.Term;
-import ru.usu.cs.fun.back.TermsSubstitutor;
-import ru.usu.cs.fun.lang.*;
+import ru.usu.cs.fun.lang.types.Float;
+import ru.usu.cs.fun.lang.types.Int;
 
 public class Add extends Operation {
-	@Override
-	public String toString(TermsSubstitutor substitutor) {
-		return "+";
+    
+    public Add(String representation) {
+        super(representation);
+    }
+    
+	protected Term calculate(int arg1, int arg2) {
+		return new Int(arg1 + arg2);
 	}
 
-	protected Term calculate(Term arg1, Term arg2, Scope scope) {
-		int v1 = ((Int) arg1).value;
-		int v2 = ((Int) arg2.eval(scope)).value;
-		return new Int(v1 + v2);
-	}
+    protected Term calculate(float arg1, float arg2) {
+        return new Float(arg1 + arg2);
+    }
 }
