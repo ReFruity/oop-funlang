@@ -2,11 +2,11 @@ package ru.usu.cs.fun.lang.types;
 
 import ru.usu.cs.fun.back.TermsSubstitutor;
 
-public class Float extends DataType {
+public class FunFloat extends DataType {
 
     public final float value;
 
-    public Float(float value) {
+    public FunFloat(float value) {
         super();
         this.value = value;
     }
@@ -15,8 +15,8 @@ public class Float extends DataType {
     public boolean equals(Object obj) {
         if (obj == null)
             return false;
-        if (obj instanceof Float) {
-            return value == ((Float) obj).value;
+        if (obj instanceof FunFloat) {
+            return value == ((FunFloat) obj).value;
         }
         return false;
     }
@@ -27,8 +27,8 @@ public class Float extends DataType {
     }
 
     @Override
-    public String toString(TermsSubstitutor subst) {
-        return getValue() + "";
+    public java.lang.String toString(TermsSubstitutor subst) {
+        return value + "";
     }
     
     public float getValue() {

@@ -45,6 +45,11 @@ public class LangFunctionalTests{
         runTestsSet("float");
     }
 
+    @Test
+    public void testString() {
+        runTestsSet("string");
+    }
+
 	private void runTestsSet(FunParser fun, FunScope scope, Lexer lexer, String expectedOutput) {
 		Object result;
 		String actualOutput = "";

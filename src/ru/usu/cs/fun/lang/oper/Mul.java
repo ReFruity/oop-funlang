@@ -1,6 +1,7 @@
 package ru.usu.cs.fun.lang.oper;
 
 import ru.usu.cs.fun.back.Term;
+import ru.usu.cs.fun.lang.types.FunFloat;
 import ru.usu.cs.fun.lang.types.Int;
 
 public class Mul extends Operation {
@@ -14,6 +15,6 @@ public class Mul extends Operation {
     }
 
     protected Term calculate(float arg1, float arg2) {
-        return new ru.usu.cs.fun.lang.types.Float(round(arg1 * arg2));
+        return new FunFloat(round(arg1 * arg2));
     }
 }

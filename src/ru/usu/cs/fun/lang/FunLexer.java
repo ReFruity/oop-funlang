@@ -16,7 +16,10 @@ public class FunLexer extends GenericLexer {
 		Recognizer floatNumber = new FloatNumber();
 		Recognizer name = new FunName();
 		Recognizer space = new Space();
-		recognizers = new Recognizer[] { let, fun, eq, semicolon, open, close, intNumber, floatNumber, name, space };
+		Recognizer string = new StringToken();
+		recognizers = new Recognizer[] { 
+                let, fun, eq, semicolon, open, close, intNumber, floatNumber, name, space, string 
+        };
 	}
 
 	public FunLexer(String text) {

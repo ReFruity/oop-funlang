@@ -1,7 +1,7 @@
 package ru.usu.cs.fun.lang.oper;
 
 import ru.usu.cs.fun.back.Term;
-import ru.usu.cs.fun.lang.types.Float;
+import ru.usu.cs.fun.lang.types.FunFloat;
 import ru.usu.cs.fun.lang.types.Int;
 
 public class Add extends Operation {
@@ -15,6 +15,6 @@ public class Add extends Operation {
 	}
 
     protected Term calculate(float arg1, float arg2) {
-        return new Float(arg1 + arg2);
+        return new FunFloat(arg1 + arg2);
     }
 }

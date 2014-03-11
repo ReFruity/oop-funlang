@@ -5,8 +5,6 @@ import ru.usu.cs.fun.back.Term;
 import ru.usu.cs.fun.lang.Bool;
 
 public class Eq extends Operation {
-    
-    private final double e = 10e-6;
 
     public Eq(String representation) {
         super(representation);

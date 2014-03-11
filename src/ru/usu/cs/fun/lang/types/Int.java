@@ -29,8 +29,8 @@ public class Int extends DataType {
 	}
 
     @Override
-    public String toString(TermsSubstitutor subst) {
-        return getValue() + "";
+    public java.lang.String toString(TermsSubstitutor subst) {
+        return value + "";
     }
 
     public int getValue() {

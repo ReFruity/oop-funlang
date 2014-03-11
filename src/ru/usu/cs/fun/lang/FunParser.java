@@ -8,8 +8,9 @@ import ru.usu.cs.fun.front.AbstractLL1Parser;
 import ru.usu.cs.fun.front.Lexeme;
 import ru.usu.cs.fun.front.Lexer;
 import ru.usu.cs.fun.front.ParseAction;
-import ru.usu.cs.fun.lang.types.*;
-import ru.usu.cs.fun.lang.types.Float;
+import ru.usu.cs.fun.lang.types.FunFloat;
+import ru.usu.cs.fun.lang.types.FunString;
+import ru.usu.cs.fun.lang.types.Int;
 
 // Statement - initial nonterm
 // Statement has type Term
@@ -131,6 +132,13 @@ public class FunParser extends AbstractLL1Parser {
             }
         });
 
+        add("Term", new String[] {"str", "name"}, new String[] { "Atom", "Tail" }, new ParseAction() {
+            public Terms execute(Object[] items) {
+                Term atom = (Term)items[0];
+                return new Terms(atom, (Terms) items[1]);
+            }
+        });
+
 		// Term ::= 'fun' '(' name ')' Term // return fun(name) body;
 		add("Term", new String[] { "fun", "(", "name", ")", "Term" }, new ParseAction() {
 			public Terms execute(Object[] items) {
@@ -172,12 +180,20 @@ public class FunParser extends AbstractLL1Parser {
 
         // Atom ::= float
         add("Atom", new String[] { "float" }, new ParseAction() {
-            public ru.usu.cs.fun.lang.types.Float execute(Object[] items) {
+            public FunFloat execute(Object[] items) {
                 Object value = ((Lexeme)items[0]).getValue();
-                return new Float((java.lang.Float)value);
+                return new FunFloat((java.lang.Float)value);
             }
         });
 
-		setInitial("Statement");
+        // Atom ::= str
+        add("Atom", new String[] { "str" }, new ParseAction() {
+            public FunString execute(Object[] items) {
+                Object value = ((Lexeme)items[0]).getValue();
+                return new FunString((String)value);
+            }
+        });
+
+        setInitial("Statement");
 	}
 }
