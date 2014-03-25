@@ -30,9 +30,4 @@ public class FunFloat extends DataType {
     public java.lang.String toString(TermsSubstitutor subst) {
         return value + "";
     }
-    
-    public float getValue() {
-        return value;
-    }
-
 }

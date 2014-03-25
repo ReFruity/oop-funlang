@@ -1,4 +1,4 @@
-package ru.usu.cs.fun.lang.oper;
+package ru.usu.cs.fun.lang.oper.num;
 
 import ru.usu.cs.fun.back.Term;
 import ru.usu.cs.fun.lang.Bool;

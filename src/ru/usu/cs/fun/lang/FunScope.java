@@ -2,7 +2,8 @@ package ru.usu.cs.fun.lang;
 
 import ru.usu.cs.fun.back.Scope;
 import ru.usu.cs.fun.back.Term;
-import ru.usu.cs.fun.lang.oper.*;
+import ru.usu.cs.fun.lang.oper.num.*;
+import ru.usu.cs.fun.lang.oper.str.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,6 +47,18 @@ public class FunScope implements Scope {
             return new More(">");
 		if (name.equals("print"))
 			return new Print();
+        if (name.equals("len"))
+			return new Len("len");
+        if (name.equals("charAt"))
+            return new CharAt("charAt");
+        if (name.equals("concat"))
+            return new Concat("concat");
+        if (name.equals("substr"))
+            return new SubStr("substr");
+        if (name.equals("remove"))
+            return new Remove("remove");
+        if (name.equals("insert"))
+            return new Insert("insert");
 		return items.get(name);
 	}
 	

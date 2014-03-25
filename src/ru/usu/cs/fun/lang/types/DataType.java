@@ -8,6 +8,4 @@ public abstract class DataType extends Term {
     public Term substitute(java.lang.String name, Term value) {
         return this;
     }
-    
-    
 }

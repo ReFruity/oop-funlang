@@ -50,6 +50,11 @@ public class LangFunctionalTests{
         runTestsSet("string");
     }
 
+    @Test
+    public void testStringOperations() {
+        runTestsSet("string-operations");
+    }
+
 	private void runTestsSet(FunParser fun, FunScope scope, Lexer lexer, String expectedOutput) {
 		Object result;
 		String actualOutput = "";

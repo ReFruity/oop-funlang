@@ -1,4 +1,4 @@
-package ru.usu.cs.fun.lang.oper;
+package ru.usu.cs.fun.lang.oper.num;
 
 import ru.usu.cs.fun.back.Scope;
 import ru.usu.cs.fun.back.Term;
@@ -27,9 +27,11 @@ public abstract class Operation extends Term {
     }
     
     protected Term calculate(Term arg1, Term arg2, Scope scope) {
+        
         arg2 = arg2.eval(scope);
         boolean b1 = arg1 instanceof FunFloat;
         boolean b2 = arg2 instanceof FunFloat;
+        
         if(b1 || b2) {
             Number v1 = new Float(b1 ? ((FunFloat) arg1).value : ((Int) arg1).value);
             Number v2 = new Float(b2 ? ((FunFloat) arg2).value : ((Int) arg2).value);

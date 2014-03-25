@@ -1,0 +1,29 @@
+let str := "abcde";
+let str2 := "fg";
+
+len str;
+//>5
+
+charAt str 3;
+//>100
+
+concat str str2;
+//>"abcdefg"
+
+substr str 1 2;
+//>"bc"
+
+substr (concat str2 str) 1 3;
+//>"gab"
+
+remove str 1 2;
+//>"ade"
+
+insert str str2 2;
+//>"abfgcde"
+
+let f := insert str;
+let g := concat "a" "b";
+
+f g (+ 0 1);
+//>"aabbcde"

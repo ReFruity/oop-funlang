@@ -3,9 +3,9 @@ package ru.usu.cs.fun.lang.types;
 import ru.usu.cs.fun.back.TermsSubstitutor;
 
 public class FunString extends DataType {
-    public final java.lang.String value;
+    public final String value;
 
-    public FunString(java.lang.String value) {
+    public FunString(String value) {
         super();
         this.value = value;
     }
@@ -26,11 +26,11 @@ public class FunString extends DataType {
     }
 
     @Override
-    public java.lang.String toString(TermsSubstitutor subst) {
-        return value;
+    public String toString(TermsSubstitutor subst) {
+        return "\"" + value + "\"";
     }
-
-    public java.lang.String getValue() {
-        return value;
+    
+    public int length() {
+        return value.length();
     }
 }

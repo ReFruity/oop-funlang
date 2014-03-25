@@ -28,6 +28,8 @@ public class StringToken extends AutomatonRecognizer {
 
     @Override
     protected String getValue(String text) {
-        return text;
+        text = text.replaceAll("\\\\n", "\n");
+        text = text.replaceAll("\\\\t", "\t");
+        return text.substring(1, text.length()-1);
     }
 }

@@ -32,9 +32,4 @@ public class Int extends DataType {
     public java.lang.String toString(TermsSubstitutor subst) {
         return value + "";
     }
-
-    public int getValue() {
-        return value;
-    }
-
 }
