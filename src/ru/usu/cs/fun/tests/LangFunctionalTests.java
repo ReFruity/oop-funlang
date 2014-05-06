@@ -7,10 +7,7 @@ import ru.usu.cs.fun.lang.FunLexer;
 import ru.usu.cs.fun.lang.FunParser;
 import ru.usu.cs.fun.lang.FunScope;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -48,14 +45,31 @@ public class LangFunctionalTests{
     @Test
     public void testString() {
         runTestsSet("string");
-    }
+    }   
 
     @Test
     public void testStringOperations() {
         runTestsSet("string-operations");
     }
 
-	private void runTestsSet(FunParser fun, FunScope scope, Lexer lexer, String expectedOutput) {
+    @Test
+    public void testIO() {
+        runTestsSet("IO");
+    }
+
+    @Test
+    public void testConsole() {
+        try {
+            System.setIn(new FileInputStream(".\\src\\ru\\usu\\cs\\fun\\tests\\test-console-file.txt"));
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        runTestsSet("console");
+    }
+
+
+    private void runTestsSet(FunParser fun, FunScope scope, Lexer lexer, String expectedOutput) {
 		Object result;
 		String actualOutput = "";
 		while ((result = fun.evalNext(lexer)) != null) {

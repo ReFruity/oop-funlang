@@ -29,7 +29,7 @@ public class StringToken extends AutomatonRecognizer {
     @Override
     protected String getValue(String text) {
         text = text.replaceAll("\\\\n", "\n");
-        text = text.replaceAll("\\\\t", "\t");
+        text = text.replaceAll("([^\\\\])\\\\t", "$1\t");
         return text.substring(1, text.length()-1);
     }
 }

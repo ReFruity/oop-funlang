@@ -4,7 +4,7 @@ import ru.usu.cs.fun.back.Term;
 import ru.usu.cs.fun.lang.types.FunFloat;
 import ru.usu.cs.fun.lang.types.Int;
 
-public class Mul extends Operation {
+public class Mul extends ArOperation {
 
     public Mul(String representation) {
         super(representation);

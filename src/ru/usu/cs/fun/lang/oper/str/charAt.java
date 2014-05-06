@@ -5,14 +5,14 @@ import ru.usu.cs.fun.lang.oper.Operation;
 import ru.usu.cs.fun.lang.types.FunString;
 import ru.usu.cs.fun.lang.types.Int;
 
-public class Len extends Operation {
-
-    public Len(String representation) {
-        super(representation, 1);
+public class CharAt extends Operation {
+    public CharAt(String representation) {
+        super(representation, 2);
     }
-        
+
     protected Term calculate(Term ... args) {
         FunString arg = (FunString) args[0];
-        return new Int(arg.value.length());
+        int index = ((Int)args[1]).value;
+        return new Int(arg.value.codePointAt(index));
     }
 }

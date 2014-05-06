@@ -3,7 +3,7 @@ package ru.usu.cs.fun.lang.oper.num;
 import ru.usu.cs.fun.back.Term;
 import ru.usu.cs.fun.lang.Bool;
 
-public class More extends Operation {
+public class More extends ArOperation {
 
     public More(String representation) {
         super(representation);

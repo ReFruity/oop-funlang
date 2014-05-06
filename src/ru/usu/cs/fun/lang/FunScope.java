@@ -3,7 +3,9 @@ package ru.usu.cs.fun.lang;
 import ru.usu.cs.fun.back.Scope;
 import ru.usu.cs.fun.back.Term;
 import ru.usu.cs.fun.lang.oper.num.*;
+import ru.usu.cs.fun.lang.oper.rdr.*;
 import ru.usu.cs.fun.lang.oper.str.*;
+import ru.usu.cs.fun.lang.types.FunReader;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -59,6 +61,20 @@ public class FunScope implements Scope {
             return new Remove("remove");
         if (name.equals("insert"))
             return new Insert("insert");
+        if (name.equals("openReader"))
+            return new OpenReader("openReader");
+        if (name.equals("readInt"))
+            return new ReadInt("readInt");
+        if (name.equals("readLine"))
+            return new ReadLine("readLine");
+        if (name.equals("closeReader"))
+            return new CloseReader("closeReader");
+        if (name.equals("isEnd"))
+            return new IsEnd("isEnd");
+        if (name.equals("openString"))
+            return new OpenString("openString");
+        if (name.equals("console"))
+            return new FunReader(System.in);
 		return items.get(name);
 	}
 	

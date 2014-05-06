@@ -1,0 +1,16 @@
+let r := console;
+
+readLine r;
+//>"sometext"
+
+readInt r;
+//>12
+
+isEnd r;
+//>false
+
+readInt r;
+//>34
+
+isEnd r;
+//>true

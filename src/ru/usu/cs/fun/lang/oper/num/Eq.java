@@ -4,7 +4,7 @@ import ru.usu.cs.fun.back.Scope;
 import ru.usu.cs.fun.back.Term;
 import ru.usu.cs.fun.lang.Bool;
 
-public class Eq extends Operation {
+public class Eq extends ArOperation {
 
     public Eq(String representation) {
         super(representation);

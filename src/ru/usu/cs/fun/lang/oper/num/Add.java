@@ -4,7 +4,7 @@ import ru.usu.cs.fun.back.Term;
 import ru.usu.cs.fun.lang.types.FunFloat;
 import ru.usu.cs.fun.lang.types.Int;
 
-public class Add extends Operation {
+public class Add extends ArOperation {
     
     public Add(String representation) {
         super(representation);

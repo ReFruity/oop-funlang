@@ -1,8 +1,13 @@
 let str := "abcde";
 let str2 := "fg";
+let mylen := len;
 
 len str;
 //>5
+
+let str3 := "newstr";
+mylen str3;
+//>6
 
 charAt str 3;
 //>100
@@ -27,3 +32,10 @@ let g := concat "a" "b";
 
 f g (+ 0 1);
 //>"aabbcde"
+
+let h := concat "42";
+h "3";
+//>"423"
+
+h "4";
+//>"424"

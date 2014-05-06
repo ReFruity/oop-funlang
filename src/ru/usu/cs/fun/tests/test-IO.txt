@@ -1,0 +1,33 @@
+let working_dir := ".\\src\\ru\\usu\\cs\\fun\\tests\\";
+let file1 := concat working_dir "test-IO1.txt";
+let file2 := concat working_dir "test-IO2.txt";
+let r := openReader file1 "UTF-8";
+let r2 := openReader file2 "UTF-8";
+
+readInt r;
+//>42
+
+readLine r2;
+//>"just empty line"
+
+readLine (openReader file2 "UTF-8");
+//>"just empty line"
+
+readLine r2;
+//>"another line"
+
+isEnd r;
+//>false
+
+isEnd r2;
+//>true
+
+closeReader r2;
+//>true
+
+let r3 := openString (concat "qwerty\n" "12345");
+readLine r3;
+//>"qwerty"
+
+readInt r3;
+//>12345
